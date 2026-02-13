@@ -1,0 +1,58 @@
+<section class="file-cabinet">
+  <div class="stack-container">
+
+    <article
+      *ngFor="let project of projects; trackBy: trackByProject"
+      class="project-folder"
+      [class.active]="activeProjectId() === project.id"
+      (click)="toggleProject(project.id)"
+    >
+
+      <div class="folder-tab">
+        <span class="tab-text">{{ project.title }}</span>
+      </div>
+
+      <div class="folder-content">
+        <div class="paper-sheet">
+
+          <header class="sheet-header">
+            <h3>{{ project.title }}</h3>
+            <div class="meta-row">
+              <span class="role">{{ project.role }}</span>
+              <span class="separator">|</span>
+              <span>{{ project.company }}</span>
+              <span class="separator">|</span>
+              <span class="date">{{ project.date }}</span>
+            </div>
+          </header>
+
+          <div class="sheet-body-grid">
+            <div class="info-col">
+              <p class="description">{{ project.description }}</p>
+              <div class="tech-stack">
+                <span *ngFor="let tech of project.technologies" class="pill">{{ tech }}</span>
+              </div>
+            </div>
+
+            <div class="image-col">
+              <img
+                [src]="project.imageUrl"
+                [alt]="'Preview de ' + project.title"
+                class="project-img"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <div *ngIf="project.link" class="sheet-footer">
+            <a [href]="project.link" target="_blank" class="btn-link">
+              Ver Proyecto Online
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </article>
+  </div>
+</section>

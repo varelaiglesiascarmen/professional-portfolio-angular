@@ -1,4 +1,3 @@
-// -------- main confg ----------
 :host {
   display: block;
   min-height: 100vh;
@@ -10,7 +9,6 @@
   color: #333;
 }
 
-// ------- sheet of paper -------
 .cv-container {
   background-color: #ffffff;
   width: 90%;
@@ -24,7 +22,6 @@
   border-radius: 2px;
 }
 
-// ----------- stacked sheets of paper -------------
 .cv-container::before,
 .cv-container::after {
   content: '';
@@ -41,7 +38,6 @@
   display: none;
 }
 
-// --------- panels -------------------
 .left-panel {
   padding: 40px;
   order: 2;
@@ -78,7 +74,6 @@
   letter-spacing: 1px;
 }
 
-// ------ items ----------
 .experience-item,
 .student-program-item,
 .education-item {
@@ -201,7 +196,6 @@ li {
   color: #fff;
 }
 
-// ----- responsive design --------
 @media (min-width: 992px) {
   .cv-container {
     flex-direction: row;

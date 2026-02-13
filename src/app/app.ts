@@ -18,7 +18,6 @@ export class App implements OnInit {
 
   constructor(private router: Router) {}
 
-  // display of the navbar and footer according to the path
   ngOnInit() {
     this.router.events.pipe(
       filter((event: Event): event is NavigationEnd => event instanceof NavigationEnd)
