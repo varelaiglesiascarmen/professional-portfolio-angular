@@ -113,7 +113,7 @@ src/app
 │  ├─ cv
 │  ├─ footer
 │  ├─ home
-│  ├─ lenguage-selector
+│  ├─ language-selector
 │  ├─ navbar
 │  └─ projects
 └─ services
