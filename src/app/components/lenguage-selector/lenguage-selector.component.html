@@ -1,0 +1,14 @@
+@if (isVisible()) {
+  <div class="language-overlay">
+    <div class="language-card">
+      <h2>Bienvenido | Welcome | Bienvenue</h2>
+      <p>Selecciona tu idioma | Selecet you language | Sélectionnez votre langue</p>
+
+      <div class="lang-options">
+        <button (click)="selectLanguage('es')">Español</button>
+        <button (click)="selectLanguage('en')">English</button>
+        <button (click)="selectLanguage('fr')">Français</button>
+      </div>
+    </div>
+  </div>
+}

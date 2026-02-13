@@ -4,16 +4,16 @@ import { RouterOutlet, Router, NavigationEnd, Event } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LanguageSelectorComponent } from './components/lenguage-selector/lenguage-selector.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FooterComponent, NavbarComponent],
+  imports: [CommonModule, RouterOutlet, FooterComponent, NavbarComponent, LanguageSelectorComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App implements OnInit {
-
   showLayout: boolean = false;
 
   constructor(private router: Router) {}
