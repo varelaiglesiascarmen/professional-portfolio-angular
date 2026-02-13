@@ -1,0 +1,53 @@
+<div class="watermark-title">CONTACTO</div>
+
+@if (stage === 'sent') {
+<div class="success-overlay" role="alert" aria-live="polite">
+  <div class="success-box">
+    <i class="bi bi-send-check-fill"></i>
+    <h2>¡Mensaje enviado!</h2>
+    <p>Gracias por contactar, te responderé muy pronto.</p>
+    <button class="btn-reset" (click)="fullReset()">Enviar otro mensaje</button>
+  </div>
+</div>
+}
+
+<main class="contact-main">
+  <h1 class="main-title">¿HABLAMOS?</h1>
+
+  <div class="envelope-wrapper" [attr.data-stage]="stage">
+
+    <div class="envelope-flap"></div>
+
+    <div class="envelope-pocket-mask">
+
+      <div class="envelope-back"></div>
+
+      <div class="letter">
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" [attr.aria-busy]="stage !== 'idle'">
+          <h2 class="form-title">Escríbeme</h2>
+
+          <div class="input-group">
+              <input type="text" name="name" placeholder="Nombre" required [(ngModel)]="formData.name" [disabled]="stage !== 'idle'">
+              <input type="email" name="email" placeholder="Email" required [(ngModel)]="formData.email" [disabled]="stage !== 'idle'">
+          </div>
+
+          <input type="text" name="subject" placeholder="Asunto" required maxlength="100"
+            [(ngModel)]="formData.subject" [disabled]="stage !== 'idle'">
+
+          <textarea name="message" rows="4" placeholder="Mensaje" required [(ngModel)]="formData.message" [disabled]="stage !== 'idle'"></textarea>
+
+          <button type="submit" class="btn-send" [disabled]="!contactForm.form.valid || stage !== 'idle'">
+            @if (stage === 'idle') {
+              <span>Enviar Mensaje</span>
+            } @else {
+              <span>Enviando...</span>
+            }
+          </button>
+        </form>
+      </div>
+
+      <div class="envelope-front"></div>
+    </div>
+
+  </div>
+</main>

@@ -1,0 +1,67 @@
+:root {
+    --color-bg-light: #fdeef4;
+    --color-accent-pink: #d84381;
+    --color-text-dark: #333;
+    --color-a-dark-pink: #a11b63;
+    --color-button-dark-pink: #5A0332;
+}
+
+body {
+    background-color: var(--color-bg-light);
+    min-height: 100vh;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+p{
+    font-size: 20px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--color-a-dark-pink);
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+button {
+    background-color: #DD73A2;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 10px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: none;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-button-dark-pink);
+    color: #DD73A2 !important;
+}
+
+button a {
+    display: inline-block;
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    transform: none;
+    transition: none;
+}
+
+button:hover a {
+    color: inherit;
+}

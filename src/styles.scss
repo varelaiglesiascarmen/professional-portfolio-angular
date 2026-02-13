@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/* fonts api */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Italianno&family=Karantina:wght@400;700&family=Koulen&family=Kreon:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+:root {
+    --font-primary: "Poppins", sans-serif;
+    --font-secondary: "Playfair Display", serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+}
