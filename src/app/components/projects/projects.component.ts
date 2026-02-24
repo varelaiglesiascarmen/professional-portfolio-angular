@@ -44,7 +44,7 @@ export class ProjectsComponent {
       description: 'Refactorización completa de portafolio personal, migrando de una arquitectura estática basada en Bootstrap a una SPA moderna con Angular 17. Integración de componentes reactivos (Signals) manteniendo la consistencia visual del sistema de diseño original mediante SCSS modular.',
       technologies: ['Angular', 'Angular CLI', 'Bootstrap 5', 'HTML 5', 'SCSS (Sass)', 'CSS3 Animations', 'TypeScript', 'Git', 'GitHub', 'Figma'],
       imageUrl: 'assets/img/portfolio.png',
-      link: 'https://varelaiglesiascarmen.github.io/Mimi_Rex_VideoGame/'
+      link: 'https://github.com/varelaiglesiascarmen/professional-portfolio-angular'
     },
     {
       id: 3,
@@ -55,7 +55,7 @@ export class ProjectsComponent {
       description: 'Videojuego de plataformas 2D inspirado en los clásicos del género. Desarrollé el motor de físicas desde cero, incluyendo el sistema de gravedad, detección de colisiones por ejes (AABB) y mecánicas de salto parabólico. Programé el ciclo de vida de los enemigos y la lógica de scroll lateral infinito, priorizando una experiencia de juego fluida y una respuesta de control precisa mediante JavaScript Vanilla.',
       technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'Sprite Animation', 'Game Mechanics', 'Git', 'GitHub'],
       imageUrl: 'assets/img/mimi-rex.png',
-      link: 'https://github.com/varelaiglesiascarmen/professional-portfolio-angular'
+      link: 'https://varelaiglesiascarmen.github.io/Mimi_Rex_VideoGame/'
     },
     {
       id: 4,
