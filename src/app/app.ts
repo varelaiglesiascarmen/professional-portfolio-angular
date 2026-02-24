@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RouterOutlet, Router, NavigationEnd, Event } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { FooterComponent } from './components/footer/footer.component';
@@ -10,6 +10,7 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, FooterComponent, NavbarComponent, LanguageSelectorComponent],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
