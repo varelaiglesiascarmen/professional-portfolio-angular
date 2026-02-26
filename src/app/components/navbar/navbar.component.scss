@@ -6,22 +6,165 @@
     z-index: 50;
     background-color: #fceef5;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem 1rem;
+    padding: 0.75rem 1rem;
+}
+
+.header-inner {
+    width: min(100%, 75rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.menu-toggle {
+    position: relative;
+    z-index: 130;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 0.12rem;
+        background-color: #3a042a;
+        border-radius: 1rem;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    &.open {
+        span:nth-child(1) {
+            transform: translateY(0.42rem) rotate(45deg);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: translateY(-0.42rem) rotate(-45deg);
+        }
+    }
+}
+
+.nav-custom {
+    display: none;
+
+    &.open {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        z-index: 120;
+        background-color: #fceef5;
+        padding: 0.75rem;
+        overflow-y: auto;
+        animation: menuOverlayIn 0.22s ease-out;
+    }
+}
+
+.menu-content {
+    margin-top: max(4.25rem, env(safe-area-inset-top));
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+}
+
+.nav-custom.open .menu-content {
+    animation: menuContentIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .header a {
     color: #000000;
     text-decoration: none;
     font-size: 1rem;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    padding: 0.5rem 1rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.35rem;
     transition: transform 0.3s ease-in-out, color 0.3s;
 }
 
 .header a:hover {
     text-decoration: underline;
     color: #a11b63;
-    transform: scale(1.05);
+    transform: scale(1.02);
     font-weight: bold;
+}
+
+.header a.active {
+    color: #a11b63;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+@media (min-width: 48rem) {
+    .header {
+        padding: 1.25rem 1rem;
+    }
+
+    .header-inner {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-custom {
+        display: flex;
+        position: static;
+        justify-content: center;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .menu-content {
+        margin-top: 0;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+    }
+
+    .header a {
+        display: inline-flex;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@keyframes menuOverlayIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menuContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(-0.625rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

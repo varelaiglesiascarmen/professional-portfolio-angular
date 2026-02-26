@@ -1,14 +1,27 @@
-<div class="container-fluid header">
-  <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mx-auto w-100"
-    style="max-width: 1200px;">
+<div class="header">
+  <div class="header-inner">
+    <button
+      class="menu-toggle"
+      [class.open]="isMenuOpen"
+      type="button"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="main-navigation"
+      aria-label="Abrir o cerrar menú"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-    <nav class="nav nav-custom justify-content-center justify-content-md-start">
-      <a routerLink="/" class="nav-link" aria-current="page">Inicio</a>
-      <a routerLink="/aboutMe" class="nav-link">Sobre mí</a>
-      <a routerLink="/CV" class="nav-link">CV</a>
-      <a routerLink="/projects" class="nav-link">Proyectos</a>
-      <a routerLink="/contact" class="nav-link">Contacto</a>
+    <nav id="main-navigation" class="nav-custom" [class.open]="isMenuOpen" (click)="closeMenu()">
+      <div class="menu-content" (click)="$event.stopPropagation()">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link" (click)="closeMenu()">Inicio</a>
+        <a routerLink="/aboutMe" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Sobre mí</a>
+        <a routerLink="/CV" routerLinkActive="active" class="nav-link" (click)="closeMenu()">CV</a>
+        <a routerLink="/projects" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Proyectos</a>
+        <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Contacto</a>
+      </div>
     </nav>
-
   </div>
 </div>
