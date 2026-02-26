@@ -99,12 +99,12 @@ $c-brown: #3E0E14;
   .tab-text {
     font-family: $font-mono;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     color: #2c1e1e;
     z-index: 5;
     position: relative;
-    white-space: nowrap;  
+    white-space: nowrap;
   }
 }
 
@@ -289,11 +289,19 @@ $c-brown: #3E0E14;
   }
 
   .folder-tab {
-    width: 130px;
+    width: auto;
+    min-width: 156px;
+    max-width: calc(100% - 20px);
     height: 30px;
     top: -30px;
+    padding: 0 10px;
 
-    .tab-text { font-size: 0.8rem; }
+    .tab-text {
+      font-size: 0.72rem;
+      line-height: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .project-folder:nth-of-type(odd) .folder-tab {
